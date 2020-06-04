@@ -1,0 +1,75 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+page{
+  background:white;
+}
+.location{
+  padding: 0rpx 20rpx;
+  display: inline-block;
+  width: 100%;
+  height: 50rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+.region{
+  float: left;
+}
+.region .picker{
+  display: inline-block;
+}
+.picker-region{
+  float: right;
+}
+.section{
+  float: right;
+}
+.section .picker{
+  margin-right: 90rpx;
+}
+
+.main{
+
+}
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+  
+  .news{
+    position: relative
+  }
+  .title{
+    position: absolute;
+    bottom: 10rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: bold;
+  }
+
+.models{
+  display: block;
+  width: 100%;
+  height: 200rpx;
+  top: 200rpx;
+  padding: 20rpx;
+}
+.model1{
+  float: left;
+  width: 50%;
+  height: 200rpx;
+  margin: 0 auto;
+  line-height: 200rpx;
+  text-align: center;
+  box-shadow: 4px 4px 5px #999;
+}
+.model2{
+  float: right;
+  width: 50%;
+   height: 200rpx;
+  margin: 0 auto;
+  line-height: 200rpx;
+  text-align: center;
+  box-shadow: 4px 4px 5px #999;
+}

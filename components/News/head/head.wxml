@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">校园资讯</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="title">{{title}}</view>
+  <view class="info">
+    <view class="author">{{author}}</view>
+    <view class="organization">{{organization}}</view>
+    <view class="time">{{time}}</view>
+  </view>
+</view>
+

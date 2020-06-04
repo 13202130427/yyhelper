@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">行业类型</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view><text>请选择行业，最多一个</text></view>
+  <block wx:for="{{industry}}" wx:for-item="item">
+    <view class="nav">
+      <view class="box">
+        <view class="block-nav" bindtap="openIndustryList" id="{{index}}">
+          <text class="name">{{item.name}}</text>
+          <image src="{{item.hiddena ? '/icons/direction-down-grey.png': '/icons/direction-top-grey.png'}}" style="width:30rpx;height:30rpx;" class="icons"></image>
+          
+        </view>
+        <view class="nav-second" hidden="{{item.hiddena}}">
+          <block wx:for="{{item.info}}" wx:for-item="info">
+            <view class="info" bindtap="chooseIndustry"data-text="{{info.name}}"data-id="{{info.id}}">{{info.name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>

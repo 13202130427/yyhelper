@@ -1,0 +1,45 @@
+.main{
+  display: block;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.box{
+  padding: 30rpx;
+}
+.info{
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 5rpx #dad9d9 solid;
+  line-height: 150rpx; 
+}
+.left{
+  float: left;
+  margin-top: 20rpx;
+}
+.centre{
+  float: left;
+  margin-left: 20rpx;
+  width: 60%;
+}
+.centre .text{
+  float: left;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.right{
+  float: right;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.btn{
+  position: absolute;
+  
+  bottom: 0rpx;
+  width: 100%;
+  padding: 10rpx;
+}
+.submit{
+  background-color: #1296db;
+  color: #fff;
+}

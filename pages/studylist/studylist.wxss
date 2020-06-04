@@ -1,0 +1,30 @@
+page{
+  background-color: #f1f1f1;
+}
+.main{
+
+}
+.video{
+  padding: 10rpx;
+  display: block;
+  float: left;
+  width: 50%;
+  
+}
+.video-photo{
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.video-title{
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  background-color: #fff;
+  font-weight: 20rpx;
+  height: 100rpx;
+  line-height: 45rpx;
+  overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}

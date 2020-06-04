@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">我的学习干货</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <block wx:for="{{videolist}}" wx:for-item="item">
+  <navigator url="{{item.status == -1? '/pages/myinfo/page/study/study?id='+item.id : item.status==1 ? '/pages/video/video?video_id='+item.id+'&url='+item.url : ''}}">
+    <view class="video">
+      <view class="video-photo"><image src="{{item.photo}}" style="width:100%;height:300rpx;"></image></view>
+      <scroll-view class="video-title" scroll-x="true" >{{item.name}}</scroll-view>
+      <view class="video-status" style="color:{{item.status == 1 ||item.status == -1? 'green':'red'}}">{{item.status == -1? '编辑中' :item.status == 0? '审核不通过': item.status == 1? '审核通过':'审核中'}}</view>
+    </view>
+  </navigator>
+    
+  </block>
+  
+</view>

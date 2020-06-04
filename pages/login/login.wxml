@@ -1,0 +1,25 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">登录</view>
+</cu-custom>
+<view class="main">
+  <view class="icons">
+    <view class="yy-images">
+      <image src="../../icons/yyhelper.png" style="width:300rpx;height:300rpx;"></image>
+    </view>
+    <view class="info">
+      <text >为您大学学习规划提供助力！</text>
+    </view>
+  </view>
+  <view style="margin-bottom:100rpx"></view>
+  <view class="container">
+    <view class="userinfo">
+      <view>
+        <button  type="warn" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style="width:400rpx;"> 微信登录 </button>
+      </view>
+    </view>
+  </view>
+  <image src="../../icons/login-bg.jpg" style="position:absolute;bottom:0rpx;width:50%;height:300rpx;"></image>
+</view>
+<mp-dialog title="微信授权" show="{{alertStatus}}" bindbuttontap="loginAlertBtn" buttons="{{[{text: '确认'}]}}">
+    <view>微信授权成功</view>
+</mp-dialog>

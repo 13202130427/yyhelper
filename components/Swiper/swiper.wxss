@@ -1,0 +1,19 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+	.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+  .news{
+    position: relative
+  }
+  .title{
+    position: absolute;
+    bottom: 10rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: bold;
+  }

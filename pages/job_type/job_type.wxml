@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">职位类型</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="search">
+    <image src="/icons/search-grey.png" style="width:50rpx;height:50rpx;" class="search-image"></image>
+    <input placeholder="请输入职位名称" class="search-input" focus bindinput="searchInput" value="{{searchInfo}}" bindblur="saveInfo"></input>
+    <image src="/icons/close.png" style="width:50rpx;height:50rpx;" class="search-close" hidden="{{!searchStatus}}" bindtap="closeSearchInfo"></image>
+  </view>
+  <view class="nav" hidden="{{searchStatus}}">
+    <view class="title"></view>
+    <view >
+      <block wx:for="{{industry_type}}" wx:for-item="item1">
+      <view class="title" bindtap="openIndustryList" id="{{index}}" style="{{item1.hiddena ?'color:#000' : 'color:rgb(1, 219, 165);'}}">
+        <view class="title-text">{{item1.name}}</view>
+        <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx" class="title-image"></image>
+      </view>
+      <view class="info" hidden="{{item1.hiddena}}" >
+        <view class="info-mask" bindtap="backhiddena"></view>
+        <view class="info-main">
+          <block wx:for="{{item1.sec_name}}" wx:for-item="item2">
+            <view class="info-left">
+              <view class="left-list" style="{{item2.hiddenb ?'color:#000' : 'color:rgb(1, 219, 165);'}}" bindtap="openIndustryList1" id="{{index}}">{{item2.name}}</view>
+            </view>
+            <scroll-view class="info-right" hidden="{{item2.hiddenb}}" scroll-y="true" scroll-top="50rpx;">
+              <block wx:for="{{item2.third_name}}" wx:for-item="item3">
+                <view class="right-list" bindtap="chooseIndustryType" data-text="{{item3.name}}" data-id = "{{item3.id}}">{{item3.name}}</view>
+              </block>
+            </scroll-view>
+          </block>
+        </view>
+      </view>
+    </block>
+    </view>
+  </view>
+  <view class="search-down" hidden="{{!searchStatus}}">
+  <view class="title"></view>
+    <block wx:for="{{result}}" wx:for-item="item">
+      <view class="result" data-id="{{item.id}}"data-text="{{item.name}}" bindtap="chooseIndustryType">{{item.name}}</view>
+    </block>
+  </view>
+</view>

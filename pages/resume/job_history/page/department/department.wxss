@@ -1,0 +1,27 @@
+page{
+  background-color: #fffbfb;
+}
+.main{
+  padding: 50rpx;
+  position: relative
+}
+.top{
+  display: inline-block;
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 3rpx #e9e9e9 solid;
+}
+.down{
+  position: absolute;
+  right: 50rpx;
+  top: 140rpx;
+}
+.number-0{
+  color:green;
+}
+.number-1{
+  color:red;
+}
+.submit{
+  
+}

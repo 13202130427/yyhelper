@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">个人奖项</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+
+<view class="box">
+  <block wx:for="{{info}}" wx:for-item="item" wx:for-index="idx">
+  <view class="nav" hidden="{{item.hiddena}}">
+      <navigator url="./info/info?info={{item.value == '请输入'? '':item.value}}&idx={{item.idx}}">
+        <view class="txt-{{item.value == '请输入'? 0:1}}">{{item.value}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </block>
+</view>
+<view class="submit">
+    <image src="../../../icons/icons_ok.png" style="width:80rpx;height:80rpx;" bindtap="savePrize"></image>
+  </view>
+</view>
+<mp-dialog title="个人奖项" show="{{alertStatusOk}}" bindbuttontap="saveAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>保存成功!</view>
+</mp-dialog>
+<Mydialog saveError="{{saveError}}" show="{{hiddenError}}"></Mydialog>

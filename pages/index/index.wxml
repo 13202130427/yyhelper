@@ -1,0 +1,38 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">鱼影学助</view>
+</cu-custom>
+<view class="main">
+  <view class="location">
+    <view class="region">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="picker">
+          <image src="../../icons/location.png" style="width:50rpx;height:50rpx;"></image>
+          <view class="picker-region">{{region[1]}}</view>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <picker bindchange="bindUniversityChange"  value="{{index}}" range="{{university}}" range-key="name">
+        <view class="picker">
+        {{university[index].name}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <SearchBox></SearchBox>
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <navigator class="news" url="{{item.id==0 ?'': '../news/show/show?id='+item.id}}">
+          <image src="{{item.url}}" mode="aspectFill" style="width:700rpx;height:280rpx;"></image>
+          <view class="title">{{item.title}}</view>
+        </navigator> 
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<mp-dialog title="友情提示" show="{{status}}" bindbuttontap="closeAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>当前学院/校区暂不提供新闻资讯服务，谢谢合作</view>
+</mp-dialog>
+

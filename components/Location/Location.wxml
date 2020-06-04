@@ -1,0 +1,17 @@
+<view class="main">
+  <view class="region">
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <view class="picker">
+        <image src="../../icons/location.png" style="width:50rpx;height:50rpx;"></image>
+        <view class="picker-region">{{region[1]}}</view>
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <picker bindchange="bindUniversityChange"  value="{{index}}" range="{{university}}" range-key="name">
+      <view class="picker">
+      {{university[index].name}}
+      </view>
+    </picker>
+  </view>
+</view>

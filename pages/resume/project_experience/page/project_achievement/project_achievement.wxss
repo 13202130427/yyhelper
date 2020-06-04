@@ -1,0 +1,43 @@
+page{
+  background-color: #fffbfb;
+}
+.main{
+  padding: 50rpx;
+  position: relative
+}
+.top{
+  display:block;
+  width: 100%;
+  border-bottom: 3rpx #e9e9e9 solid;
+}
+.textinfo{
+  width: 100%;
+  height: 400rpx;
+}
+.placeholder-0{
+  position: absolute;
+  left: 40rpx;
+  top:40rpx;
+  color: #8b8b8b;
+}
+.placeholder-1{
+  display: none;
+  position: absolute;
+  left: 40rpx;
+  top:40rpx;
+  color: #8b8b8b;
+}
+.number-0{
+  color:green;
+}
+.number-1{
+  color:red;
+}
+.down{
+  position: absolute;
+  right: 50rpx;
+  top: 460rpx;
+}
+.submit{
+  
+}

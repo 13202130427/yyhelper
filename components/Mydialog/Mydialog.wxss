@@ -1,0 +1,16 @@
+.main{
+  display: block;
+  position: fixed;
+  top: 1100rpx;
+  left: 220rpx;
+  width: 300rpx;
+  height: 70rpx;
+  z-index: 1000;
+  background: #000;
+  border-radius: 20rpx;
+}
+.text{
+  line-height: 70rpx;
+  text-align: center;
+  color: white
+}

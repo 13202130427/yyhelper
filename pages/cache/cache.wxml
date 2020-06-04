@@ -1,0 +1,13 @@
+<view class="main">
+  <view class="icons">
+    <view class="yy-images">
+      <image src="../../icons/yyhelper.png" style="width:300rpx;height:300rpx;"></image>
+    </view>
+    <view class="info">
+      <text >为您大学学习规划提供助力！</text>
+    </view>
+  </view>
+  <view class="number">
+    <view class="num">{{time}}</view>
+  </view>
+</view>

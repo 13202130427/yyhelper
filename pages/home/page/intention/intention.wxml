@@ -1,0 +1,73 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">管理求职意向</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="box">
+    <view class="title">
+      <text>求职状态</text>
+    </view>
+    <view class="nav">
+      <picker bindchange="bindStatusChange" value="{{index}}" range="{{jobStatus}}">
+        <view class="txt-1">
+        {{jobStatus[index]}}
+        </view>
+      </picker>
+       <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>期望职位</text>
+    </view>
+    <view class="nav">
+      <navigator url="/pages/job_type/job_type">
+        <view class="txt-{{hasIndustryType}}">{{chooseIndustryType}}</view>
+        <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>期望行业</text>
+    </view>
+    <view class="nav">
+      <navigator url="/pages/industry/industry">
+        <view class="txt-{{hasIndustry}}">{{chooseIndustry}}</view>
+        <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>工作城市</text>
+    </view>
+    <view class="nav">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="txt-1">
+          {{region[1]}}
+        </view>
+      </picker>
+       <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>薪资要求</text>
+    </view>
+    <view class="nav">
+      <picker mode="multiSelector" bindchange="bindMoneyChange" bindcolumnchange="bindMoneyColumnChange" value="{{moneyIndex}}" range="{{moneylist}}">
+        <view class="txt-1">
+        {{showMoneylist}}
+        </view>
+      </picker>
+       <image src="/icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+    </view>
+  </view>
+  <view class="submit">
+    <image src="/icons/icons_ok.png" style="width:80rpx;height:80rpx;" bindtap="saveJbIntention"></image>
+  </view>
+</view>
+<mp-dialog title="求职意向" show="{{alertStatusOk}}" bindbuttontap="saveAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>保存成功!</view>
+</mp-dialog>

@@ -1,0 +1,101 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">工作经历</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="box">
+    <view class="title">
+      <text>公司名称</text>
+    </view>
+    <view class="nav">
+      <navigator url="./page/company_name/company_name?name={{name}}&judge={{hasName}}">
+        <view class="txt-{{hasName}}">{{name}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>所在行业</text>
+    </view>
+    <view class="nav">
+      <navigator url="/pages/industry/industry">
+        <view class="txt-{{hasIndustry}}">{{chooseIndustry}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>在职时间</text>
+    </view>
+    <view class="nav">
+      <view class="picker-left-box">
+        <picker fields="month" mode="date" value="{{date}}" start="1920-01-01" end="{{nowtime}}" bindchange="bindStartDateChange">
+          <view class="txt-{{hasStartTime}}">
+            {{start_time}}
+          </view>
+        </picker>
+      </view>
+      <view class="picker-middle">-</view>
+      <view class="picker-right-box">
+        <picker fields="month" mode="date" value="{{date}}" start="1920-01-01" end="{{nowtime}}" bindchange="bindEndDateChange">
+          <view class="txt-{{hasEndTime}}">
+            {{end_time}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>职业类型</text>
+    </view>
+    <view class="nav">
+      <navigator url="/pages/job_type/job_type">
+        <view class="txt-{{hasIndustryType}}">{{chooseIndustryType}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>所属部门</text>
+    </view>
+    <view class="nav">
+      <navigator url="./page/department/department?department={{department}}&judge={{hasDepartment}}">
+        <view class="txt-{{hasDepartment}}">{{department}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>工作内容</text>
+    </view>
+    <view class="nav">
+      <navigator url="./page/job_info/job_info?info={{info}}&judge={{hasInfo}}">
+        <view class="txt-{{hasInfo}}">{{info}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="box">
+    <view class="title">
+      <text>工作业绩</text>
+    </view>
+    <view class="nav">
+      <navigator url="./page/job_achievement/job_achievement?achievement={{achievement}}&judge={{hasAchievement}}">
+        <view class="txt-{{hasAchievement}}">{{achievement}}</view>
+        <image src="../../../icons/direction-right-grey.png" style="width:30rpx;height:30rpx;" class="icons"></image>
+      </navigator>
+    </view>
+  </view>
+  <view class="submit">
+    <image src="../../../icons/icons_ok.png" style="width:80rpx;height:80rpx;" bindtap="saveJobHistory"></image>
+  </view>
+</view>
+<mp-dialog title="工作经历" show="{{alertStatusOk}}" bindbuttontap="saveAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>保存成功!</view>
+</mp-dialog>
+<Mydialog saveError="{{saveError}}" show="{{hiddenError}}"></Mydialog>

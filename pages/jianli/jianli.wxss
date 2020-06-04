@@ -1,0 +1,246 @@
+page{
+  background-color: #f1f1f1;
+}
+.main{
+
+}
+.nav{
+  display: inline-block;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  background-color: #fff;
+  position: relative;
+}
+.icons{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}
+.nav-second{
+  display: block;
+  width: 90%;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold
+}
+.job_history{
+  display: block;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  position: relative;
+}
+.job_history .info{
+  height: 230rpx;
+  position: relative;
+}
+.job_history .info .one{
+  width: 100%;
+  height:50rpx;
+  line-height: 50rpx
+}
+.job_history .info .one .left{
+  float: left;
+  width: 60%;
+}
+.job_history .info .one .right{
+  color: #d1d1d1;
+  float: right;
+  width: 40%;
+}
+.job_history .info .two{
+  float: left;
+  height: 30rpx;
+  width: 100%;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #a1a1a1;
+  font-weight: normal
+}
+.job_history .info .three{
+  float: left;
+  height: 80rpx;
+  width: 85%;
+  line-height: 80rpx;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.job_history .info .four{
+  float: left;
+  height: 30rpx;
+  width: 100%;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #a1a1a1;
+  font-weight: normal
+}
+.job_history .info .close{
+   position: absolute;
+    right: 0rpx;
+    top: 40px;
+}
+.campus_experience{
+  display: block;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  position: relative;
+}
+.campus_experience .info{
+  height: 180rpx;
+  position: relative;
+}
+.campus_experience .info .close{
+  position: absolute;
+  right: 0rpx;
+  top: 40px;
+}
+.campus_experience .info .one{
+  width: 100%;
+  height:50rpx;
+  line-height: 50rpx
+}
+.campus_experience .info .one .left{
+  float: left;
+  width: 60%;
+}
+.campus_experience .info .one .right{
+  color: #d1d1d1;
+  float: right;
+  width: 40%;
+}
+.campus_experience .two{
+  float: left;
+  height: 30rpx;
+  width: 100%;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #a1a1a1;
+  font-weight: normal
+}
+.campus_experience .three{
+  float: left;
+  height: 80rpx;
+  width: 85%;
+  line-height: 80rpx;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.project_experience{
+  display: block;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  position: relative;
+}
+.project_experience .info{
+  height: 180rpx;
+  position: relative;
+}
+.project_experience .info .close{
+  position: absolute;
+  right: 0rpx;
+  top: 40px;
+}
+.project_experience .info .one{
+  width: 100%;
+  height:50rpx;
+  line-height: 50rpx
+}
+.project_experience .info .one .left{
+  float: left;
+  width: 60%;
+}
+.project_experience .info .one .right{
+  color: #d1d1d1;
+  float: right;
+  width: 40%;
+}
+.project_experience .two{
+  float: left;
+  height: 30rpx;
+  width: 100%;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #a1a1a1;
+  font-weight: normal
+}
+.project_experience .three{
+  float: left;
+  height: 80rpx;
+  width: 85%;
+  line-height: 80rpx;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.skill{
+  display: block;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  position: relative;
+}
+.skill .info{
+  
+}
+.skill .info .one{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-weight: normal;
+}
+.skill .info .one .left{
+  float: left;
+  width: 85%;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.skill .info .one .right{
+  float: right;
+}
+.prize{
+  display: block;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 5rpx #f1f1f1 solid;
+  position: relative;
+}
+.prize .info{
+  
+}
+.prize .info .one{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-weight: normal;
+}
+.prize .info .one .left{
+  float: left;
+  width: 85%;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.prize .info .one .right{
+  float: right;
+}
+.add{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 20rpx;
+  top:50rpx;
+}

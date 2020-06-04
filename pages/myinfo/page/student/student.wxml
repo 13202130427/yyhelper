@@ -1,0 +1,116 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">学生认证</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="add" wx:if="{{student_audit == '未认证' && note.length == 0}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">
+          <picker bindchange="bindUniversityChange"  value="{{index}}" range="{{university}}" range-key="name">
+            <view class="picker">
+            {{university[index].name}}
+            </view>
+          </picker>
+        </view>
+        <view class="right">
+          <view class="base">
+            <picker bindchange="bindEduBgChange"  value="{{index1}}" range="{{edu_bg}}">
+              <view class="picker">
+                {{edu_bg[index1]}}
+              </view>
+            </picker>
+          </view>
+          <view class="base">
+            <picker fields="month" mode="date" value="{{date}}" start="2016-01-01" end="{{nowtime}}" bindchange="bindStartDateChange">
+              {{start_time}}
+            </picker>
+          </view>
+        </view>
+      </view> 
+    </view>
+    <view class="btn" bindtap="auditstudent">提交审核</view>
+  </view>
+  <view class="update" wx:if="{{student_audit == '未认证' && note.length > 0}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">学校:{{note[0].school}}</view>
+        <view class="right">
+          <view class="base">
+            学历：{{note[0].edu_bg}}
+          </view>
+          <view class="base">
+            入学时间：{{note[0].start_time}}
+          </view>
+        </view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause" bindtap="openAuditFailCause">审核失败</view>
+      <view class="action" bindtap="openedit">修改重新提交>>></view>
+    </view>
+  </view>
+  <view class="look" wx:if="{{student_audit == '已认证'}}">
+   <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">{{note[0].school}}</view>
+        <view class="right">
+          <view class="base">
+            {{note[0].edu_bg}}
+          </view>
+          <view class="base">
+            {{note[0].start_time}}
+          </view>
+        </view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause">已实名</view>
+      <view class="action">{{note[0].time}}</view>
+    </view>
+  </view>
+  <view class="look" wx:if="{{student_audit == '待审核'}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">{{note[0].school}}</view>
+        <view class="right">
+          <view class="base">
+            {{note[0].edu_bg}}
+          </view>
+          <view class="base">
+            {{note[0].start_time}}
+          </view>
+        </view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause">审核中</view>
+      <view class="action">{{note[0].time}}</view>
+    </view>
+  </view>
+</view>
+<mp-dialog title="{{title}}" show="{{alertstatus}}" bindbuttontap="closeAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>{{content}}</view>
+</mp-dialog>
+<mp-dialog title="{{title}}" show="{{alertstatus1}}" bindbuttontap="closeAlertBtn1" buttons="{{[{text:'取消'},{text: '提交审核'}]}}" >
+    <view class="title">学校</view>
+    <picker bindchange="bindUniversityChange"  value="{{index}}" range="{{university}}" range-key="name">
+      <view class="picker">
+      {{university[index].name}}
+      </view>
+    </picker>
+    <view class="title">学历</view>
+    <picker bindchange="bindEduBgChange"  value="{{index1}}" range="{{edu_bg}}">
+      <view class="picker">
+      {{edu_bg[index1]}}
+      </view>
+    </picker>
+    <view class="title">入学时间</view>
+    <picker fields="month" mode="date" value="{{date}}" start="2016-01-01" end="{{nowtime}}" bindchange="bindStartDateChange">
+            {{start_time}}
+        </picker>
+</mp-dialog>

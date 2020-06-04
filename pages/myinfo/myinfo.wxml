@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">个人中心</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="myinfo">
+    <view class="box" bindtap="upShopLogo">
+      <view class="title">头像</view>
+      <view class="info"><image src="{{userInfo.avatarUrl}}" style="width:80rpx;height:80rpx;border-radius: 40rpx;"></image></view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+    <view class="box" bindtap="openNameEdit">
+      <view class="title">昵称</view>
+      <view class="info">{{userInfo.nickName}}</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+    <view class="box" bindtap="openPhoneEdit">
+      <view class="title">手机号</view>
+      <view class="info">{{userInfo.phone == 0? '未绑定': userInfo.phone}}</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+  </view>
+  <view class="myinfo">
+    <view class="box" bindtap="openCreartStudy">
+      <view class="title">分享学习干货</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+    <view class="box" bindtap="openStudyList">
+      <view class="title">我的分享</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+  </view>
+
+  <view class="myinfo">
+    <view class="box" bindtap="openAuditPerson">
+      <view class="title">实名认证</view>
+      <view class="info">{{person_audit}}</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+    <view class="box" bindtap="openAuditStudent">
+      <view class="title">学生认证</view>
+      <view class="info">{{student_audit}}</view>
+      <view class="right"><image src="/icons/direction-right-grey.png" style="width:40rpx;height:40rpx;"></image></view>
+    </view>
+  </view>
+</view>

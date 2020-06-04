@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Mydialog": "/components/Mydialog/Mydialog"
+  }
+}

@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-blue">
+  <view slot="content">我的</view>
+</cu-custom>
+<view class="main">
+  <view class="home-top" class="bg-blue" bindtap="openPeoplenews">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view style="margin-bottom:100rpx;"></view>
+  <view class="home-down">
+  <navigator class="nav" url="./page/enclosed/enclosed"><image src="../../icons/file.png" style="width:60rpx;height:60rpx;"></image>附件简历</navigator>
+  <navigator class="nav" url="./page/Memorandum/Memorandum"><image src="../../icons/note.png" style="width:60rpx;height:60rpx;"></image>备忘录</navigator>
+  <navigator class="nav" url="./page/route/route"><image src="../../icons/route.png" style="width:60rpx;height:60rpx;"></image>学习路线</navigator>
+  <navigator class="nav" url="./page/intention/intention"><image src="../../icons/job.png" style="width:60rpx;height:60rpx;"></image>求职意向</navigator>
+  <button class="nav" open-type="contact"><image src="../../icons/service.png" style="width:60rpx;height:60rpx;"></image>我的客服</button>
+  <navigator class="nav"url="./page/about/about"><image src="../../icons/about.png" style="width:60rpx;height:60rpx;"></image>关于</navigator>
+  </view>
+</view>
+
+

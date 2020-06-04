@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">学习干货</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <block wx:for="{{videolist}}" wx:for-item="item">
+  <navigator url="/pages/video/video?url={{item.url}}&video_id={{item.id}}">
+    <view class="video">
+      <view class="video-photo"><image src="{{item.photo}}" style="width:100%;height:300rpx;"></image></view>
+      <view class="video-title"><text>{{item.name}}</text></view>
+    </view>
+  </navigator>
+  </block>
+</view>

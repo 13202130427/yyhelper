@@ -1,0 +1,54 @@
+page{
+  background-color: #f1f1f1;
+}
+.main{
+  padding:  20rpx;
+}
+.developer{
+  display: inline-block;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-bottom: 5rpx #f1f1f1 solid
+}
+.info{
+  display: block;
+  width: 100%;
+  line-height: 50rpx;
+  background-color: #fff;
+  border-bottom: 5rpx #f1f1f1 solid
+}
+.title{
+  font-weight: bold;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+  font-size: 35rpx;
+}
+.cont{
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+}
+.btn{
+  display: block;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.left{
+  width: 50%;
+  float: left;
+  background-color:#e1e1e1;
+  color: #fff;
+}
+.right{
+  width: 50%;
+  float: left;
+  background-color: #e1e1e1;
+  color: #fff;
+}
+.btnhover{
+  background-color:#1296db;
+}

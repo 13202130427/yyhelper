@@ -1,0 +1,37 @@
+page{
+  background-color: #f1f1f1;
+}
+.main{
+
+}
+.myinfo{
+  padding: 40rpx 0;
+}
+.box{
+  display: inline-block;
+  height: 120rpx;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 2rpx #f1f1f1 solid;
+  position: relative;
+  
+}
+.box .title{
+  position: absolute;
+  width: 100%;
+  left: 40rpx;
+  line-height: 120rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+.box .info{
+  position: absolute;
+  right: 100rpx;
+  top: 20rpx;
+  line-height: 80rpx;
+}
+.box .right{
+  position: absolute;
+  right: 20rpx;
+  top: 40rpx;
+}

@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">学习</view>
+</cu-custom>
+<view>
+  <view class="title">我的学习路线</view>
+  <view>
+    <block wx:for="{{routelist}}" wx:for-item="item" wx:for-index = "idx">
+      <view wx:if="{{(idx+2)%2 == 0}}" class="right" bindtap="openMystudy" data-end="{{item.end}}" data-id="{{item.id}}">
+        <view class="icons">
+          <image src="{{item.end? '/icons/stars.png':'/icons/stars1.png'}}" style="width:100rpx;height:100rpx"></image>
+        </view>
+        <view class="info">{{item.name}}</view>
+      </view>
+      <view wx:else class="left"  bindtap="openMystudy" data-end="{{item.end}}" data-id="{{item.id}}">
+        <view class="icons">
+          <image src="{{item.end? '/icons/stars.png':'/icons/stars1.png'}}" style="width:100rpx;height:100rpx"></image>
+        </view>
+        <view class="info">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="deletebtn">
+    <view class="close" bindtap="deleteAlreat">退出学习路线</view>
+  </view>
+</view>
+<Mydialog saveError="{{saveError}}" show="{{hiddenError}}"></Mydialog>
+<mp-dialog title="{{deleteText}}" show="{{deletealert}}" bindbuttontap="deleteRoute" buttons="{{[{text:'取消'},{text: '确认'}]}}" >
+    <view>删除后当前所有学习记录将不存在，是否继续执行</view>
+</mp-dialog>
+

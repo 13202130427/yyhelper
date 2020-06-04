@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">项目名称</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="top">
+    <input focus placeholder="请输入项目名称" bindinput="length" bindblur="nameInput" value="{{name}}"></input>
+  </view>
+  <text class="down"><text class="number-{{legalLength}}">{{length}}</text>/20</text>
+  <view style="margin-bottom: 100rpx;"></view>
+  <button class="submit" form-type="submit" bindtap="saveName">保存</button>
+</view>
+<mp-dialog show="{{error}}" bindbuttontap="close"   buttons="{{[{text: '确认'}]}}">
+    <view>请输入2到20个字符</view>
+</mp-dialog>

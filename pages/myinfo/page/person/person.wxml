@@ -1,0 +1,64 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">实名认证</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="add" wx:if="{{person_audit == '未实名' && note.length == 0}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right"><input placeholder="请输入姓名" placeholder-style="color:#fff;" bindinput="savename"></input></view>
+        <view class="right"><input placeholder="请输入身份证号码" placeholder-style="color:#fff;" type="idcard" bindinput="saveidcard"></input></view>
+      </view> 
+    </view>
+    <view class="btn" bindtap="auditperson">提交审核</view>
+  </view>
+  <view class="update" wx:if="{{person_audit == '未实名' && note.length > 0}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">{{note[0].username}}</view>
+        <view class="right">{{note[0].idcard}}</view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause" bindtap="openAuditFailCause">审核失败</view>
+      <view class="action" bindtap="openedit">修改重新提交>>></view>
+    </view>
+  </view>
+  <view class="look" wx:if="{{person_audit == '已实名'}}">
+   <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">{{note[0].username}}</view>
+        <view class="right">{{note[0].idcard}}</view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause">已实名</view>
+      <view class="action">{{note[0].time}}</view>
+    </view>
+  </view>
+  <view class="look" wx:if="{{person_audit == '待审核'}}">
+    <view class="nav">
+      <view class="photo"><image src="{{photo}}" style="width:120rpx;height:120rpx;"></image></view>
+      <view class="info">
+        <view class="right">{{note[0].username}}</view>
+        <view class="right">{{note[0].idcard}}</view>
+      </view> 
+    </view>
+    <view class="audit" >
+      <view class="cause">审核中</view>
+      <view class="action">{{note[0].time}}</view>
+    </view>
+  </view>
+</view>
+<mp-dialog title="{{title}}" show="{{alertstatus}}" bindbuttontap="closeAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>{{content}}</view>
+</mp-dialog>
+<mp-dialog title="{{title}}" show="{{alertstatus1}}" bindbuttontap="closeAlertBtn1" buttons="{{[{text:'取消'},{text: '提交审核'}]}}" >
+    <view class="title">姓名</view>
+    <view class="input"><input placeholder="请输入姓名" bindinput="savename"></input></view>
+    <view class="title">身份证号码</view>
+    <view class="input"><input placeholder="请输入身份证号码" type="idcard" bindinput="saveidcard"></input></view>
+</mp-dialog>

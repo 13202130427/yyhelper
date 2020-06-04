@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">{{videolist[p].name}}</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="video">
+    <video src="{{url+videolist[p].url}}"></video>
+  </view>
+  <view style="padding: 20rpx;">
+    <view class="dwn">
+      <view class="title">
+        <view class="left">视频选集</view>
+        <view class="right">{{page}}/{{length}}</view>
+      </view>
+      <block wx:for="{{videolist}}" wx:for-item="item" wx:for-index="idx">
+        <view id="{{idx}}" bindtap="changepage" class="index" style="{{p==idx? 'color:blue':''}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>

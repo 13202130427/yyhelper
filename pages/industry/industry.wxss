@@ -1,0 +1,38 @@
+.main{
+
+}
+.nav{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 30rpx;
+  position: relative;
+  
+}
+.box{
+  border-bottom: 2rpx #f1f1f1 solid;
+}
+.block-nav{
+  height: 100rpx;
+  line-height: 100rpx;
+  
+}
+.name{
+  
+  position: absolute;
+  left: 20rpx;
+}
+.icons{
+  position: absolute;
+  right: 30rpx;
+  top: 65rpx;
+}
+.nav-second{
+  display: inline-block
+}
+.info{
+  background-color: #f1f1f1;
+  padding: 20rpx;
+  float: left;
+  margin: 10rpx;
+}

@@ -1,0 +1,30 @@
+.main{
+
+}
+.icons{
+  margin-top: 300rpx;
+}
+.yy-images{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.info{
+  text-align: center
+}
+.number{
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  bottom: 100rpx;
+  right: 100rpx;
+}
+.num{
+  border-radius: 25rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #bebcbc;
+}

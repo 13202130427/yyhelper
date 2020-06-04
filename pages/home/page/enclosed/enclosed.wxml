@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">管理附件</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <block wx:for="{{resumelist}}" wx:for-item="item">
+    <view class="box" bindtap="openResume" data-path="{{item.path}}" data-type="{{item.type}}">
+      <view class="info">
+        <view class="left"><image src="/icons/docx.png" style="width:80rpx;height:80rpx;"></image></view>
+        <view class="centre"><view class="text">{{item.name}}</view><view class="text">{{item.size}} {{item.time}}上传</view></view>
+        <view class="right">...</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="btn">
+  <button hover-class="background-color: #04669b;" bindtap="upLoadAction" class="submit">上传新附件</button>
+</view>
+<mp-dialog title="个人简历" show="{{uploadfilealert}}" bindbuttontap="alertBtn" buttons="{{[{text: '取消'},{text: '确认'}]}}" >
+    <view><image src="/icons/docx.png" style="width:100rpx;height:100rpx;"></image></view>
+    <view><text>{{name}}</text></view>
+</mp-dialog>

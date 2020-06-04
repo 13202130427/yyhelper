@@ -1,0 +1,122 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">简历</view>
+</cu-custom>
+<view class="main">
+</view>
+<view class="main">
+  <block wx:for="{{universityClass}}" wx:for-item="item">
+    <view class="nav" bindtap="jianliDown" id="{{index}}">
+      <text>{{item.name}}</text>
+      <image src="{{item.hiddena ? '../../icons/direction-right.png': '../../icons/direction-down.png'}}" style="width:60rpx;height:60rpx;" class="icons"></image>
+    </view>
+    <view class="nav-second" hidden="{{item.hiddena}}">
+      <view class="job_history">
+        <text>工作经历</text>
+        <image src="../../icons/add.png" class="add" bindtap="openJobHistory" data-text="{{item.name}}"></image>
+        <block wx:for="{{item.job_history}}" wx:for-item="item1">
+          <view class="info" >
+            <view bindtap="updateJobHistory" data-id="{{item1.id}}" data-text="{{item.name}}">
+              <view class="one">
+              <text class="left">{{item1.company_name}}</text><text class="right">{{item1.start_time}}-{{item1.end_time}}</text>
+            </view>
+              <view class="two">{{item1.chooseIndustryType}}</view>
+              <view class="three">{{item1.info}}</view>
+            </view>
+            <view class="four">{{item1.industry}}</view>
+            <image src="../../icons/close.png" style="width:50rpx;height:50rpx;" bindtap="deleteAlreat" data-id="{{item1.id}}" data-text="工作经历" class="close"></image>
+          </view>
+        </block>
+      </view>
+      <view class="campus_experience">
+        <text>校园经历</text>
+        <image src="../../icons/add.png" class="add" bindtap="openCampusExperience" data-text="{{item.name}}"></image>
+        <block wx:for="{{item.campus_experience}}" wx:for-item="item1">
+          <view class="info">
+            <view bindtap="updateCampusExperience" data-id="{{item1.id}}" data-text="{{item.name}}">
+              <view class="one">
+                <text class="left">{{item1.company_name}}</text><text class="right">{{item1.start_time}}-{{item1.end_time}}</text>
+              </view>
+              <view class="two">
+                {{item1.department}}
+              </view>
+              <view class="three">{{item1.info}}</view>
+            </view>
+            <image src="../../icons/close.png" style="width:50rpx;height:50rpx" bindtap="deleteAlreat" data-id="{{item1.id}}" data-text="校园经历" class="close"></image>
+          </view>
+        </block>
+      </view>
+      <view class="project_experience">
+        <text>项目经历</text>
+        <image src="../../icons/add.png" class="add" bindtap="openProjectExperience" data-text="{{item.name}}"></image>
+        <block wx:for="{{item.project_experience}}" wx:for-item="item1">
+          <view class="info">
+            <view bindtap="updateProjectExperience" data-id="{{item1.id}}" data-text="{{item.name}}">
+              <view class="one">
+                <text class="left">{{item1.project_name}}</text><text class="right">{{item1.start_time}}-{{item1.end_time}}</text>
+              </view>
+              <view class="two">
+                {{item1.role}}
+              </view>
+              <view class="three">{{item1.info}}</view>
+            </view>
+            <image src="../../icons/close.png" style="width:50rpx;height:50rpx" bindtap="deleteAlreat" data-id="{{item1.id}}" data-text="项目经历" class="close"></image>
+          </view>
+        </block>
+      </view>
+      <view wx:if="{{item.skill.info != ''}}">
+         <view class="skill">
+          <text>技能掌握</text>
+          <image src="../../icons/update.png" class="add" bindtap="updateSkill" data-text="{{item.name}}"  data-id="{{item.skill.id}}"></image>
+          <view class="info">
+            <block wx:for="{{item.skill.info}}" wx:for-item="item1" wx:for-index="idx">
+              <view class="one">
+                <view class="left">
+                  {{item1}}
+                </view>
+                <view class="right">
+                  <image src="../../icons/close.png" style="width:50rpx;height:50rpx" bindtap="deleteAlreat" data-id="{{item.skill.id}}" data-index="{{idx}}" data-text="掌握技能" class="close"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="skill">
+          <text>技能掌握</text>
+          <image src="../../icons/add.png" class="add" bindtap="openSkill" data-text="{{item.name}}"></image>
+        </view>
+      </view>
+      <view wx:if="{{item.prize.info != ''}}">
+        <view class="prize">
+          <text>个人奖项</text>
+          <image src="../../icons/update.png" class="add" bindtap="updatePrize" data-text="{{item.name}}"  data-id="{{item.prize.id}}"></image>
+          <view class="info">
+            <block wx:for="{{item.prize.info}}" wx:for-item="item1" wx:for-index="idx">
+              <view class="one">
+                <view class="left">
+                  {{item1}}
+                </view>
+                <view class="right">
+                  <image src="../../icons/close.png" style="width:50rpx;height:50rpx" bindtap="deleteAlreat" data-id="{{item.prize.id}}" data-index="{{idx}}" data-text="个人奖项" class="close"></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+         <view class="prize">
+        <text>个人奖项</text>
+        <image src="../../icons/add.png" class="add" bindtap="openPrize" data-text="{{item.name}}"></image>
+      </view>
+      </view>
+     
+    </view>
+  </block>
+</view>
+<mp-dialog title="{{deleteText}}" show="{{deleteId}}" bindbuttontap="deleteNews" buttons="{{[{text:'取消'},{text: '确认'}]}}" >
+    <view>确定删除吗？</view>
+</mp-dialog>
+
+

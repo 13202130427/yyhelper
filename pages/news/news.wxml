@@ -1,0 +1,40 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">资讯</view>
+</cu-custom>
+<view class="main" wx:if="{{status}}">
+  <view class="search" hidden="{{!hiddena}}" style="text-align: center" bindtap="changeSearch">
+    <text>全部</text>
+    <image src="/icons/direction-down-grey.png" style="width:30rpx;height:30rpx;margin-left:10rpx;"></image>
+  </view>
+  <view class="search" hidden="{{hiddena}}">
+    <view class="search-box">
+      <view class="info" wx:for="{{searchlist}}" wx:for-item="item" wx:for-index="index">
+        <view class="title">{{item.name}}</view>
+        <view class="concent">
+          <scroll-view scroll-x="true">
+            <view  class="type" style='{{item.key==index1?"color:red;":""}} z-index:999;' bindtap='changColor' data-index='{{index}}'data-index1='{{index1}}' wx:for="{{item.type}}" wx:for-item="item1" wx:for-index="index1">{{item1.name}}</view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{newslist}}" wx:for-item="item">
+    <view style="background-color:#f1f1f1" hidden="{{item.hiddena}}">
+      <view class="news-box">
+      <text class="news-time">{{item.time}}</text>
+      <navigator class="news-nav" url="./show/show?id={{item.id}}">
+        <view class="news-image">
+          <image src="{{item.url}}" style="width:700rpx;height:280rpx;"></image>
+        </view>
+        <view  class="news-dw">
+          <view class="news-title"><text>{{item.title}}</text></view>
+          <view class="news-con"><text>{{item.profile}}</text></view>
+        </view>
+      </navigator>
+    </view>
+  </view> 
+  </block>
+</view>
+<mp-dialog title="友情提示" show="{{alertstatus}}" bindbuttontap="closeAlertBtn" buttons="{{[{text: '确认'}]}}" >
+    <view>当前学校/校区暂不提供新闻资讯服务，谢谢合作</view>
+</mp-dialog>

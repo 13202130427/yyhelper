@@ -1,0 +1,6 @@
+<view class="main">
+  <view class="box">
+    <view class="title">警告</view>
+    <view class="info">当前账号被禁用，请联系客服电话：88888888</view>
+  </view>
+</view>

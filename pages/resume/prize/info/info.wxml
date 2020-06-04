@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">个人奖项</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="top">
+    <textarea focus  bindinput="length" bindblur="infoInput" value="{{info}}" class="textinfo" maxlength="-1">
+    </textarea>
+  </view>
+  <text class="down"><text class="number-{{legalLength}}">{{length}}</text>/300</text>
+  <view style="margin-bottom: 100rpx;"></view>
+  <button class="submit" form-type="submit" bindtap="saveInfo">保存</button>
+</view>
+<mp-dialog show="{{error}}" bindbuttontap="close"   buttons="{{[{text: '确认'}]}}">
+    <view>请输入1到300个字符</view>
+</mp-dialog>

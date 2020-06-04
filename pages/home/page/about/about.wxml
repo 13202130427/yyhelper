@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">关于</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view>该小程序仅供毕设准备,有意合作者请联系</view>
+  <view>qq:1067652489</view>
+  <view>wx:sj13202130427</view>
+  <view>email:zyyphp@163.com</view>
+</view>

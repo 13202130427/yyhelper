@@ -1,0 +1,34 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">备忘录</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class = "container">
+  <view class = "today">
+    <text>{{Today}}</text>
+  </view>
+  <view class = "additem">
+    <view class = "add">
+      <image class = 'plus' src = '/icons/plus.png' bindtap="AddConfirm" />
+      <input value = "{{input}}" auto-focus  class = "InputAdd" placeholder='再次输入一个新计划' bindinput='AddInput' bindconfirm='AddConfirm'/>
+    </view>  
+  </view>
+  <view class="box">
+    <view class="sec-box">
+      <block wx:for="{{TodayList}}" wx:for-item="item" wx:key="{{ index }}">
+        <view class="today-box" >
+          <view class="info" bindtap="toggleTodoHandle" id = "{{index}}">
+            <view class = "itemcheckbox">
+              <icon  type = "{{item.completed ? 'success' : 'circle'}}"   color="white"/>
+            </view>
+            <view class = "{{item.completed ? 'itemdescriptiontcompleted':'itemdescriptiont'}}"  >
+              <text >{{item.description}}</text>
+            </view>
+          </view>
+          <view class="today-close">
+            <icon  type = 'clear' size = '20' color = "white" bindtap="removeTodoHandle" id = '{{index}}' />
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

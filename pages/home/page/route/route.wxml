@@ -1,0 +1,44 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">管理学习路线</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="y" hidden="{{!hasroute}}">
+    <view class="route">  
+      <view class="myroute">我的学习路线</view>
+      <view class="name">{{myroute.name}}</view>
+      <view class="myroute">学习路线介绍</view>
+      <view class="info">{{myroute.info}}</view>
+      <view class="openstudy"><navigator url="/pages/mystudy/mystudy"><view class="btn">进入学习</view></navigator></view>
+    </view>
+  </view>
+  <view class="n" hidden="{{hasroute}}">
+    <view class="recommend" hidden="{{!(chooseroute == 'recommend')}}">
+      <view class="title">当前为您推荐的学习路线如下</view>
+      <block wx:for="{{recommendroute}}" wx:for-item="item">
+        <navigator url="/pages/route/route?id={{item.id}}">
+          <view class="info">
+            {{item.name}}-{{item.developer}}
+          </view>
+        </navigator>
+      </block>
+      <view class="info" hidden="{{hasrecommend}}">未能给您推荐路线，请查看全部路线</view>
+      <view class="btn" bindtap="changeroute">
+        查看全部路线
+      </view>
+    </view>
+     <view class="all" hidden="{{!(chooseroute == 'all')}}">
+      <view class="title">当前全部学习路线如下</view>
+      <block wx:for="{{allroute}}" wx:for-item="item">
+      <navigator url="/pages/route/route?id={{item.id}}">
+        <view class="info">
+          {{item.name}}-{{item.developer}}
+        </view>
+      </navigator>
+      </block>
+      <view class="btn" bindtap="changeroute">
+        查看推荐路线
+      </view>
+    </view>
+  </view>
+</view>

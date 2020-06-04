@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">工作内容</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main">
+  <view class="top">
+    <textarea focus  bindinput="length" bindblur="infoInput" value="{{info}}" class="textinfo" maxlength="-1">
+    </textarea>
+    <view class="placeholder-{{hasInfo}}">
+      <view>1、主要负责新员工入职培训；</view>
+      <view>2、分析制定员工每个月个人销售业绩；</view>
+      <view>3、帮助员工提高每日客单价，整体店面管理等等"</view>
+    </view>
+    
+  </view>
+  <text class="down"><text class="number-{{legalLength}}">{{length}}</text>/300</text>
+  <view style="margin-bottom: 100rpx;"></view>
+  <button class="submit" form-type="submit" bindtap="saveInfo">保存</button>
+</view>
+<mp-dialog show="{{error}}" bindbuttontap="close"   buttons="{{[{text: '确认'}]}}">
+    <view>请输入1到300个字符</view>
+</mp-dialog>

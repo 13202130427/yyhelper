@@ -1,0 +1,101 @@
+{
+  "pages": [
+    "pages/cache/cache",
+    "pages/error/error",
+    "pages/index/index",
+    "pages/news/news",
+    "pages/news/show/show",
+    "pages/home/home",
+    "pages/home/page/enclosed/enclosed",
+    "pages/home/page/about/about",
+    "pages/home/page/intention/intention",
+    "pages/home/page/route/route",
+    "pages/home/page/Memorandum/Memorandum",
+    "pages/myinfo/myinfo",
+    "pages/myinfo/page/name/name",
+    "pages/myinfo/page/phone/phone",
+    "pages/myinfo/page/study/study",
+    "pages/myinfo/page/studylist/studylist",
+    "pages/myinfo/page/person/person",
+    "pages/myinfo/page/student/student",
+    "pages/industry/industry",
+    "pages/job_type/job_type",
+    "pages/study/study",
+    "pages/jianli/jianli",
+    "pages/login/login",
+    "pages/mystudy/mystudy",
+    "pages/studylist/studylist",
+    "pages/video/video",
+    "pages/route/route",
+    "pages/resume/campus_experience/campus_experience",
+    "pages/resume/campus_experience/page/company_name/company_name",
+    "pages/resume/campus_experience/page/department/department",
+    "pages/resume/campus_experience/page/job_info/job_info",
+    "pages/resume/job_history/job_history",
+    "pages/resume/job_history/page/company_name/company_name",
+    "pages/resume/job_history/page/department/department",
+    "pages/resume/job_history/page/job_achievement/job_achievement",
+    "pages/resume/job_history/page/job_info/job_info",
+    "pages/resume/prize/prize",
+    "pages/resume/prize/info/info",
+    "pages/resume/project_experience/project_experience",
+    "pages/resume/project_experience/page/project_achievement/project_achievement",
+    "pages/resume/project_experience/page/project_info/project_info",
+    "pages/resume/project_experience/page/project_name/project_name",
+    "pages/resume/project_experience/page/project_url/project_url",
+    "pages/resume/project_experience/page/role/role",
+    "pages/resume/skill/skill",
+    "pages/resume/skill/info/info",
+    "components/Location/Location",
+    "components/SearchBox/SearchBox",
+    "components/Swiper/swiper",
+    "components/News/head/head",
+    "components/Mydialog/Mydialog"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "mp-dialog": "/weui-miniprogram/dialog/dialog"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/index.png",
+        "selectedIconPath": "icons/index_active.png"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "学习",
+        "iconPath": "icons/study.png",
+        "selectedIconPath": "icons/study_active.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯",
+        "iconPath": "icons/news.png",
+        "selectedIconPath": "icons/news_active.png"
+      },
+      {
+        "pagePath": "pages/jianli/jianli",
+        "text": "简历",
+        "iconPath": "icons/jianli.png",
+        "selectedIconPath": "icons/jianli_active.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home_active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">{{hiddena? videolist[p].name:'我的学习'}}</view>
+  <view slot="backText">返回</view>
+</cu-custom>
+<view class="main" hidden="{{hiddena}}">
+  <view class="route">
+    <view class="title">路线规划</view>
+    <view class="name">{{info.study_name}}</view>
+    <view class="info"><text style="font-weight:bold;">描述：</text>{{info.study_info}}</view>
+  </view>
+  <view class="class">
+    <view class="title">课程安排</view>
+    <view class="photo"><image src="{{info.photo}}" style="width:100%;height:100%;"></image></view>
+    <view class="name">{{info.video_name}}</view>
+  </view>
+  <view class="startstudy"><view class="btn" bindtap="startStudy">开始学习</view></view>
+</view>
+<view class="main1" hidden="{{!hiddena}}">
+  <view class="video">
+    <view wx:if="{{study_speed.study_id == info.study_id}}">
+      <video src="{{info.url +videolist[p].url}}" bindtimeupdate="changeSpeed" bindended="endvideo" initial-time="{{page==study_speed.page ? study_speed.speed: videolist[p].speed}}" autoplay="{{hiddena}}"></video>
+    </view>
+    <view wx:else>
+      <video src="{{info.url +videolist[p].url}}" bindtimeupdate="changeSpeed" bindended="endvideo" initial-time="{{videolist[p].speed}}" autoplay="{{hiddena}}"></video>
+    </view>
+    <view style="padding: 20rpx;">
+      <view class="dwn">
+        <view class="title">
+          <view class="left">视频选集</view>
+          <view class="right">{{page}}/{{length}}</view>
+        </view>
+        <view wx:if="{{study_speed.study_id == info.study_id}}">
+          <block wx:for="{{videolist}}" wx:for-item="item" wx:for-index="idx">
+            <view id="{{idx}}" class="index" style="{{p==idx? 'color:blue':''}}" bindtap="{{idx>(study_speed.page-2+1)?'changeerror':'changepage'}}">{{item.name}}<view class="end" hidden="{{idx>=(study_speed.page-2+1)}}">已完成</view></view>
+          </block>
+        </view>
+        <view wx:else>
+          <block wx:for="{{videolist}}" wx:for-item="item" wx:for-index="idx">
+            <view id="{{idx}}" class="index" style="{{p==idx? 'color:blue':''}}" bindtap="changepage">{{item.name}}<view class="end">已完成</view></view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<Mydialog saveError="{{saveError}}" show="{{hiddenError}}"></Mydialog>

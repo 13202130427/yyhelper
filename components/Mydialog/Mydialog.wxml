@@ -1,0 +1,5 @@
+<view class="main" hidden="{{show}}">
+  <view class="text">
+    <text>{{saveError}}</text>
+  </view>
+</view>
